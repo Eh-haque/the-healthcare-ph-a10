@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "General health care",
+    "desc": "Interactively procrastinate high-payoff content without backward-compatible data. Quickly cultivate optimal processes.",
+    "img": "../images/service/cardiogram.png"
+  },
+  {
+    "id": 2,
+    "title": "Dental services",
+    "desc": "Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures.",
+    "img": "../images/service/dental.png"
+  },
+  {
+    "id": 3,
+    "title": "Screening",
+    "desc": "Proactively envisioned multimedia based expertise and cross-media growth strategies. Seamlessly visualize quality intellectual capital.",
+    "img": "./images/service/laboratory.png"
+  },
+  {
+    "id": 4,
+    "title": "Orthopedics",
+    "desc": "Collaboratively administrate turnkey channels whereas virtual e-tailers. Objectively seize scalable metrics whereas proactive e-services.",
+    "img": ".//images/service/orthopedics.png"
+  },
+  {
+    "id": 5,
+    "title": "Laboratory",
+    "desc": "Credibly innovate granular internal or “organic” sources whereas high standards in web-readiness. Energistically scale future-proof core competencies.",
+    "img": "./images/service/research.png"
+  },
+  {
+    "id": 6,
+    "title": "Pediatrics",
+    "desc": "Interactively procrastinate high-payoff content without backward-compatible data. Quickly cultivate optimal processes and tactical architectures.",
+    "img": "../images/service/treatment.png"
+  }
+]

@@ -6,12 +6,13 @@ import Home from './Pages/Home/Home';
 import Service from './Pages/Service/Service';
 import Header from './Pages/Shared/Header/Header';
 import Footer from './Pages/Shared/Footer/Footer';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Header></Header>
+        <Header></Header>
         <Switch>
           <Route exact path='/'>
             <Home></Home>
@@ -22,6 +23,9 @@ function App() {
           <Route path='/service'>
             <Service></Service>
           </Route>
+          <Route path='*'>
+            <NotFound></NotFound>
+          </Route>
         </Switch>
         <Footer></Footer>
       </BrowserRouter>
@@ -30,3 +34,5 @@ function App() {
 }
 
 export default App;
+
+// http://medicare.bold-themes.com/general-hospital/

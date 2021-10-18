@@ -7,6 +7,7 @@ import Service from './Pages/Service/Service';
 import Header from './Pages/Shared/Header/Header';
 import Footer from './Pages/Shared/Footer/Footer';
 import NotFound from './Pages/NotFound/NotFound';
+import Login from './Pages/Authenticate/Login/Login';
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route path='/service/:id'>
             <Service></Service>
+          </Route>
+          <Route path='/login'>
+            <Login></Login>
           </Route>
           <Route path='*'>
             <NotFound></NotFound>

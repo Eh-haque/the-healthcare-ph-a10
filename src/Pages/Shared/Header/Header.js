@@ -1,13 +1,15 @@
 import React from 'react';
-import { Container, Image, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useFirebase from '../../../Hook/useFirebase';
 import logo from '../../../media/icon/logo.png'
 
 const Header = () => {
+    const { user, handleLogout } = useFirebase();
     return (
         <Navbar bg="light" expand="lg">
             <Container>
-                <Navbar.Brand as={Link} className='w-25' to="home"><Image fluid src={logo}/></Navbar.Brand>
+                <Navbar.Brand as={Link} className='w-25' to="home"><Image fluid src={logo} /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -17,7 +19,10 @@ const Header = () => {
                     >
                         <Nav.Link as={Link} className='text-primary' to="/home"><h5>Home</h5></Nav.Link>
                         <Nav.Link as={Link} className='text-primary' to="/service"><h5>Service</h5></Nav.Link>
-                        <Nav.Link as={Link} className='text-primary' to="/action2"><h5>Link</h5></Nav.Link>
+                        {user?.displayName?
+                            <Button className='text-danger' onClick={handleLogout}><h5>Logout {user?.displayName}</h5></Button> :
+                            <Nav.Link as={Link} className='text-success' to="/login"><h5>Login</h5></Nav.Link>
+                        }
                     </Nav>
                 </Navbar.Collapse>
             </Container>

@@ -15,19 +15,19 @@
     "id": 3,
     "title": "Screening",
     "desc": "Proactively envisioned multimedia based expertise and cross-media growth strategies. Seamlessly visualize quality intellectual capital.",
-    "img": "./images/service/laboratory.png"
+    "img": "../images/service/laboratory.png"
   },
   {
     "id": 4,
     "title": "Orthopedics",
     "desc": "Collaboratively administrate turnkey channels whereas virtual e-tailers. Objectively seize scalable metrics whereas proactive e-services.",
-    "img": ".//images/service/orthopedics.png"
+    "img": "../images/service/orthopedics.png"
   },
   {
     "id": 5,
     "title": "Laboratory",
     "desc": "Credibly innovate granular internal or “organic” sources whereas high standards in web-readiness. Energistically scale future-proof core competencies.",
-    "img": "./images/service/research.png"
+    "img": "../images/service/research.png"
   },
   {
     "id": 6,

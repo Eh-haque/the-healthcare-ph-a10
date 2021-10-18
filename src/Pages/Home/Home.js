@@ -3,8 +3,8 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { Carousel, Row, Container } from 'react-bootstrap';
 import banner1 from '../../media/banner/5330589.png'
-import banner2 from '../../media/banner/5330590.png'
-import banner3 from '../../media/banner/5330591.png'
+import banner2 from '../../media/banner/5330591.png'
+import banner3 from '../../media/banner/5570418.png'
 import Services from '../Services/Services';
 
 const Home = () => {
@@ -20,7 +20,7 @@ const Home = () => {
                 <Carousel.Item>
                     <img style={{ height: '100vh' }}
                         className="d-block w-100"
-                        src={banner1}
+                        src={banner3}
                         alt="First slide"
                     />
                     <Carousel.Caption>
@@ -36,7 +36,7 @@ const Home = () => {
                 <Carousel.Item>
                     <img style={{ height: '100vh' }}
                         className="d-block w-100"
-                        src={banner3}
+                        src={banner1}
                         alt="Third slide"
                     />
                 </Carousel.Item>

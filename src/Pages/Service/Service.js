@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Button, Container, Image } from 'react-bootstrap';
+import { Button, Col, Container, Image, Row } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
 
 const Service = () => {
@@ -23,12 +23,16 @@ const Service = () => {
 
     return (
         <Container className='my-5'>
-            <h2 className='text-success'>{service?.title?.toUpperCase()}</h2><hr />
-            <div className='d-flex align-items-center my-5'>
-                <Image className='p-5' src={service?.img}/>
-                <div><h3 className='p-5'>{service?.desc}</h3><Button variant='outline-success'>Book Now</Button></div>
-            </div>
-            <Button as={Link} to='/home' variant='success'>Back To Home</Button>
+            <Row>
+                <Col>
+                    <h2 className='text-success'>{service?.title?.toUpperCase()}</h2><hr />
+                    <div className=' my-5'>
+                        <Image fluid className='p-5' src={service?.img} />
+                        <div><h3 className='p-5'>{service?.desc}</h3><Button variant='outline-success'>Book Now</Button></div>
+                    </div>
+                    <Button as={Link} to='/home' variant='success'>Back To Home</Button>
+                </Col>
+            </Row>
         </Container>
     );
 };

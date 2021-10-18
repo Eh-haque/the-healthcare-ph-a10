@@ -1,79 +1,75 @@
 import React from 'react';
 import { useState } from 'react';
+import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import useFirebase from '../../../Hook/useFirebase';
 
 const Login = () => {
 
-    const { handleGoogleLogin,
-        user,
-        handleGithubLogin,
-        handleUserRegister,
-        handleUserLogin,error } = useFirebase();
+    const { handleGoogleLogin, user, handleGithubLogin, handleUserLogin, error } = useFirebase();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    // const [isLogin, setIsLogin] = useState(false);
 
-    const handleEmail = (e) => {
+    const handleEmail = e => {
         setEmail(e.target.value);
     };
-    const handlePassword = (e) => {
+    const handlePassword = e => {
         setPassword(e.target.value);
     };
     console.log(email, password);
 
-    const handleRegister = () => {
-        handleUserRegister(email, password)
+    // const handleRegister = e => {
+    //     handleUserRegister(email, password);
+    //     e.preventDefault();
+    // }
+    const handleLogin = e => {
+        handleUserLogin(email, password);
+        e.preventDefault();
     }
-    const handleLogin = () => {
-        handleUserLogin(email, password)
-    }
+
+    // const handleToggle =e=>{
+    //     setIsLogin(e.target.checked)
+    // }
+
     return (
-        <div className="div d-flex justify-content-center align-items-center">
-            <div className="row ">
-                <div className="col-md-6">
-                    <div>
-                        <div className="form-input mt-5">
-                            <input
-                                onChange={handleEmail}
-                                className="mt-2 p-2"
-                                type="email"
-                                placeholder="Email"
-                            />
-                            <br />
-                            <input
-                                onChange={handlePassword}
-                                className="mt-2 p-2"
-                                type="password"
-                                placeholder="Password"
-                            />
-                            <br />
-                            <div className="login-regiater-btn mt-4">
-                                <button
-                                    onClick={handleRegister}
-                                    className="btn btn-primary me-1"
-                                >
-                                    Register
-                                </button>
-                                <button onClick={handleLogin} className="btn btn-success ms-1">
-                                    Login
-                                </button>
-                            </div>
-                        </div>
+        <Container>
+            <Row xs={1} md={2} className='align-items-center'>
+                <Col style={{ textAlign: 'left' }}>
+                    <Form>
+                        <h2 className='text-primary mt-5'>Please Login</h2>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>Email address</Form.Label>
+                            <Form.Control type="email" placeholder="Enter email" onBlur={handleEmail} required />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control type="password" placeholder="Password" onBlur={handlePassword} required />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                            <Form.Check type="checkbox" label="Remember me" />
+                        </Form.Group>
+                        <div>
+                            <Button variant="primary" type="submit" onClick={handleLogin}>
+                                Login
+                            </Button>
+                        </div><hr />
+                        <Link to='/register' className='mb-3'>New User? Click to Register</Link><hr />
                         <div className="login-btn mt-4">
-                            <button
-                                onClick={handleGoogleLogin}
-                                className="btn btn-primary m-2"
-                            >
-                                {user?.displayName ? user?.displayName : 'google sign in'}
-                            </button>
-                            <button onClick={handleGithubLogin} className="btn btn-success m-2">
+                            <Button variant='primary' onClick={handleGoogleLogin} className="me-2">
+                                {user?.displayName ? user?.displayName : 'Google sign in'}
+                            </Button>
+                            <Button variant='success' onClick={handleGithubLogin}>
                                 {user?.displayName ? user?.displayName : 'Github sign in'}
-                            </button>
-                        </div>
-                    </div>
-                    <p className='bg-danger text-white my-5'>{error}</p>
-                </div>
-                <div className="col-md-6">
+                            </Button>
+                        </div><hr />
+                        <p className='bg-danger text-white my-5 p-2 rounded'>{error ? error : 'No Error 😊'}</p>
+                    </Form>
+                </Col>
+
+                <Col className="col-md-6">
                     <div className="right-side-image">
                         <img
                             className="w-100"
@@ -82,9 +78,9 @@ const Login = () => {
                         />
                     </div>
                     ;
-                </div>
-            </div>
-        </div>
+                </Col>
+            </Row>
+        </Container>
     );
 };
 

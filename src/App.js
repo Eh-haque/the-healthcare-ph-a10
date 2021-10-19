@@ -25,25 +25,25 @@ function App() {
             <Route exact path='/'>
               <Home></Home>
             </Route>
-            <Route path='/home'>
+            <Route exact path='/home'>
               <Home></Home>
             </Route>
             <PrivateRoute path='/service/:id'>
               <Service></Service>
             </PrivateRoute>
-            <PrivateRoute path='/shop'>
+            <PrivateRoute exact path='/shop'>
               <Shop></Shop>
             </PrivateRoute>
-            <Route path='/about'>
+            <Route exact path='/about'>
               <About></About>
             </Route>
-            <Route path='/contact'>
+            <Route exact path='/contact'>
               <Contact></Contact>
             </Route>
-            <Route path='/login'>
+            <Route exact path='/login'>
               <Login></Login>
             </Route>
-            <Route path='/register'>
+            <Route exact path='/register'>
               <Register></Register>
             </Route>
             <Route path='*'>
@@ -58,5 +58,3 @@ function App() {
 }
 
 export default App;
-
-// http://medicare.bold-themes.com/general-hospital/

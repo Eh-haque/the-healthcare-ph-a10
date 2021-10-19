@@ -6,7 +6,7 @@ import useFirebase from '../../../Hook/useFirebase';
 
 const Login = () => {
 
-    const { handleGoogleLogin, user, handleGithubLogin, handleUserLogin, error } = useFirebase();
+    const { handleGoogleLogin, handleGithubLogin, handleUserLogin, error } = useFirebase();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -61,10 +61,10 @@ const Login = () => {
                         <Link to='/register' className='mb-3 rounded p-2 border mt-3'>New User? Click to Register</Link>
                         <div className="login-btn mt-4">
                             <Button variant='primary' onClick={handleGoogleLogin} className="me-2 mb-2">
-                                {user?.displayName ? user?.displayName : 'Google sign in'}
+                                Google sign in
                             </Button>
                             <Button variant='success' onClick={handleGithubLogin} className='mb-2'>
-                                {user?.displayName ? user?.displayName : 'Github sign in'}
+                                Github sign in
                             </Button>
                         </div><hr />
                         <p className='bg-danger text-white p-2 rounded'>{error ? error : 'No Error 😊'}</p>

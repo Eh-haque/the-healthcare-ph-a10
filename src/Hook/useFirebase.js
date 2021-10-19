@@ -77,7 +77,11 @@ const useFirebase = () => {
         // });
     };
 
-    const handleUserRegister = (email, password ) => {
+    const handleUserRegister = (email, password, name) => {
+        if (name.length < 3) {
+            setError('Please enter your name with greater than character')
+            return;
+        }
         if (password.length < 6) {
             setError('Password must be at least Six characters')
             return;
@@ -118,11 +122,12 @@ const useFirebase = () => {
                 console.log(result.user);
                 setError('');
             })
-            /* .catch((error) => {
+            .catch((error) => {
                 setError(error.message);
+                return;
                 // const errorMessage = error.message;
-            }); */
-            .finally(() => setIsLoading(false));
+            });
+        // .finally(() => setIsLoading(false));
     };
 
     return {
@@ -132,6 +137,7 @@ const useFirebase = () => {
         handleLogout,
         handleUserRegister,
         handleUserLogin,
+        name,
         setName,
         isLoading,
         error

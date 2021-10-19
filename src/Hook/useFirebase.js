@@ -23,7 +23,7 @@ const useFirebase = () => {
 
     const [user, setUser] = useState({});
     const [error, setError] = useState("");
-    const [name, setName] = useState('');
+    const [name, setName] = useState("");
     const [isLoading, setIsLoading] = useState(true);
 
 
@@ -78,9 +78,10 @@ const useFirebase = () => {
     };
 
     const handleUserRegister = (email, password, name) => {
+        // console.log(name);
         if (name.length < 3) {
-            setError('Please enter your name with greater than character')
-            return;
+            setError('Please enter your name with greater then 3 character')
+            return
         }
         if (password.length < 6) {
             setError('Password must be at least Six characters')
@@ -124,7 +125,6 @@ const useFirebase = () => {
             })
             .catch((error) => {
                 setError(error.message);
-                return;
                 // const errorMessage = error.message;
             });
         // .finally(() => setIsLoading(false));
@@ -137,10 +137,10 @@ const useFirebase = () => {
         handleLogout,
         handleUserRegister,
         handleUserLogin,
-        name,
         setName,
         isLoading,
-        error
+        error,
+        name
     };
 };
 

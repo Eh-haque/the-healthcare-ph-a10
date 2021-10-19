@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { Button, Col, Container, Form, Image, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useFirebase from '../../../Hook/useFirebase';
 
@@ -18,27 +18,29 @@ const Login = () => {
     const handlePassword = e => {
         setPassword(e.target.value);
     };
-    console.log(email, password);
+    // console.log(email, password);
 
-    // const handleRegister = e => {
-    //     handleUserRegister(email, password);
-    //     e.preventDefault();
-    // }
-    const handleLogin = e => {
+    const handleLogin = (event) => {
         handleUserLogin(email, password);
-        e.preventDefault();
+        event.preventDefault();
+        // console.log(event);
     }
-
-    // const handleToggle =e=>{
-    //     setIsLogin(e.target.checked)
-    // }
 
     return (
         <Container>
             <Row xs={1} md={2} className='align-items-center'>
-                <Col style={{ textAlign: 'left' }}>
+                <Col className='col-md-5'>
+                    <div>
+                        <Image
+                            className="w-100 p-5"
+                            src="https://cdn.pixabay.com/photo/2019/08/30/15/48/lock-4441691_960_720.png"
+                            alt=""
+                        />
+                    </div>
+                </Col>
+                <Col style={{ textAlign: 'left' }} className='p-5 col-md-7'>
                     <Form>
-                        <h2 className='text-primary mt-5'>Please Login</h2>
+                        <h2 className='text-primary'>Please Login</h2><hr />
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
                             <Form.Control type="email" placeholder="Enter email" onBlur={handleEmail} required />
@@ -56,28 +58,17 @@ const Login = () => {
                                 Login
                             </Button>
                         </div><hr />
-                        <Link to='/register' className='mb-3'>New User? Click to Register</Link><hr />
+                        <Link to='/register' className='mb-3 rounded p-2 border mt-3'>New User? Click to Register</Link>
                         <div className="login-btn mt-4">
-                            <Button variant='primary' onClick={handleGoogleLogin} className="me-2">
+                            <Button variant='primary' onClick={handleGoogleLogin} className="me-2 mb-2">
                                 {user?.displayName ? user?.displayName : 'Google sign in'}
                             </Button>
-                            <Button variant='success' onClick={handleGithubLogin}>
+                            <Button variant='success' onClick={handleGithubLogin} className='mb-2'>
                                 {user?.displayName ? user?.displayName : 'Github sign in'}
                             </Button>
                         </div><hr />
-                        <p className='bg-danger text-white my-5 p-2 rounded'>{error ? error : 'No Error 😊'}</p>
+                        <p className='bg-danger text-white p-2 rounded'>{error ? error : 'No Error 😊'}</p>
                     </Form>
-                </Col>
-
-                <Col className="col-md-6">
-                    <div className="right-side-image">
-                        <img
-                            className="w-100"
-                            src="https://i.ibb.co/MSBbLcd/access-control-system-abstract-concept-illustration-security-system-authorize-entry-login-credential.jpg"
-                            alt=""
-                        />
-                    </div>
-                    ;
                 </Col>
             </Row>
         </Container>

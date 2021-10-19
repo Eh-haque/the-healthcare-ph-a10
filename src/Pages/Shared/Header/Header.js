@@ -8,7 +8,7 @@ import logo from '../../../media/icon/logo.png'
 const Header = () => {
     const { user, handleLogout } = useFirebase();
     return (
-        <Navbar bg="light" expand="lg" sticky='top'>
+        <Navbar bg="white" expand="lg" sticky='top' className='shadow rounded'>
             <Container>
                 <Navbar.Brand as={Link} className='w-25' to="home"><Image fluid src={logo} /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
@@ -20,8 +20,11 @@ const Header = () => {
                     >
                         <Nav.Link as={Link} className='text-primary' to="/home"><h5>Home</h5></Nav.Link>
                         <Nav.Link as={HashLink} className='text-primary' to="/home#services"><h5>Service</h5></Nav.Link>
+                        <Nav.Link as={Link} className='text-primary' to="/shop"><h5>Shop</h5></Nav.Link>
+                        <Nav.Link as={Link} className='text-primary' to="/about"><h5>AboutUs</h5></Nav.Link>
+                        <Nav.Link as={Link} className='text-primary' to="/contact"><h5>ContactUs</h5></Nav.Link>
                         {user?.displayName ?
-                            <Button variant='danger' className='text-white' onClick={handleLogout}><h5>Logout {user?.displayName}</h5></Button> :
+                            <Button variant='danger' className='text-white ms-2' onClick={handleLogout}><h5>Logout {user?.displayName}</h5></Button> :
                             <Nav.Link as={Link} className='text-success' to="/login"><h5>Login</h5></Nav.Link>
                         }
                     </Nav>

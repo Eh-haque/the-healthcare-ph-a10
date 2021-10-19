@@ -2,11 +2,11 @@ import React from 'react';
 import { Col, Container, Image, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../../media/icon/logo.png';
-import { FaFacebook,FaTwitter,FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <footer className="bg-light">
+        <footer className="shadow-lg bg-white">
             <Container>
                 <div className="row">
                     <Col md={5} className="mt-3">
@@ -27,15 +27,15 @@ const Footer = () => {
                     <Col md={4} className="mt-3">
                         <h5 className="text-uppercase">Links</h5>
                         <ul className="list-unstyled">
-                            <Nav.Link as={Link} to="#!"><FaFacebook/></Nav.Link>
-                            <Nav.Link as={Link} to="#!"><FaTwitter/></Nav.Link>
-                            <Nav.Link as={Link} to="#!"><FaLinkedin/></Nav.Link>
+                            <Nav.Link as={Link} to="#!"><FaFacebook /></Nav.Link>
+                            <Nav.Link as={Link} to="#!"><FaTwitter /></Nav.Link>
+                            <Nav.Link as={Link} to="#!"><FaLinkedin /></Nav.Link>
                         </ul>
                     </Col>
                 </div>
             </Container>
 
-            <div className="text-center py-3">© 2021 Copyright: 
+            <div className="text-center py-3">© 2021 Copyright:
                 <Link to='#'> www.healthcare.com</Link>
             </div>
 

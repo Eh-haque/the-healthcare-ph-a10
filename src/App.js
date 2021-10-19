@@ -11,6 +11,9 @@ import Login from './Pages/Authenticate/Login/Login';
 import Register from './Pages/Authenticate/Register/Register';
 import AuthProvider from './Contexts/AuthProvider';
 import PrivateRoute from './Pages/Authenticate/PrivateRoute/PrivateRoute';
+import Shop from './Pages/Shop/Shop';
+import About from './Pages/About/About';
+import Contact from './Pages/Contact/Contact';
 
 function App() {
   return (
@@ -28,6 +31,15 @@ function App() {
             <PrivateRoute path='/service/:id'>
               <Service></Service>
             </PrivateRoute>
+            <PrivateRoute path='/shop'>
+              <Shop></Shop>
+            </PrivateRoute>
+            <Route path='/about'>
+              <About></About>
+            </Route>
+            <Route path='/contact'>
+              <Contact></Contact>
+            </Route>
             <Route path='/login'>
               <Login></Login>
             </Route>

@@ -7,7 +7,7 @@ const Aboutus = () => {
     return (
         <Container>
             <div className='bg-primary text-white p-5 mb-5 rounded mt-5'>
-                <h4 className='py-4 rounded'>Health Care</h4>
+                <h4 className='rounded'>Health Care</h4>
                 <h1 className='border-bottom pb-4'>Hospital</h1>
             </div>
             <Row style={{ textAlign: 'left' }} className='my-5'>

@@ -19,7 +19,7 @@ const Header = () => {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <Nav.Link as={Link} className='rounded navStyle' to="/home" eventKey="link-1"><h5>Home</h5></Nav.Link>
+                        <Nav.Link as={HashLink} className='rounded navStyle' to="/home#home" eventKey="link-1"><h5>Home</h5></Nav.Link>
                         <Nav.Link as={HashLink} className='rounded navStyle' to="/home#services" eventKey="link-2"><h5>Service</h5></Nav.Link>
                         <Nav.Link as={Link} className='rounded navStyle' to="/shop" eventKey="link-3"><h5>Shop</h5></Nav.Link>
                         <Nav.Link as={Link} className='rounded navStyle' to="/about" eventKey="link-4"><h5>AboutUs</h5></Nav.Link>

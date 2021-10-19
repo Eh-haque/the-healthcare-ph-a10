@@ -18,7 +18,7 @@ const Home = () => {
             .then(data => setServices(data))
     }, [])
     return (
-        <div>
+        <div id='home'>
             <Carousel fade>
                 <Carousel.Item>
                     <img style={{ height: '100vh' }}
@@ -66,32 +66,32 @@ const Home = () => {
                 <Row xs={1} md={2} lg={4} className='' >
 
                     <Col>
-                        <div className='shadow p-5 rounded bg-success text-white'>
+                        <div className='shadow p-5 rounded bg-success text-white card-hover'>
                             <h2>Great staff</h2>
                             <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps.</p>
                             <Button variant='primary'>Read More <FaArrowAltCircleRight /></Button>
                         </div>
                     </Col>
                     <Col>
-                        <div className='shadow p-5 my-5 rounded bg-primary text-white'>
+                        <div className='shadow p-5 my-5 rounded bg-primary text-white card-hover'>
                             <h2>Affordable</h2>
                             <p>Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance to maximise offline indicators.</p>
                             <Button variant='success'>Read More <FaArrowAltCircleRight /></Button>
                         </div>
                     </Col>
                     <Col>
-                        <div className='shadow p-5 rounded bg-success text-white'>
+                        <Card className='shadow p-5 rounded bg-success text-white card-hover'>
                             <h2>Great facilities</h2>
                             <p>Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas.</p>
                             <Button>Read More <FaArrowAltCircleRight /></Button>
-                        </div>
+                        </Card>
                     </Col>
                     <Col>
-                        <div className='shadow p-5 my-5 rounded bg-primary text-white'>
+                        <Card className='shadow p-5 my-5 rounded bg-primary text-white card-hover'>
                             <h2>Consult us</h2>
                             <p>Collaboratively administrate turnkey channels whereas virtual e-tailers. Objectively seize scalable metrics whereas proactive e-services.</p>
                             <Button variant='success'>Read More <FaArrowAltCircleRight /></Button>
-                        </div>
+                        </Card>
                     </Col>
                 </Row>
 
@@ -103,7 +103,7 @@ const Home = () => {
                 </div>
                 <Row md={2} xs={1}>
                     <Col>
-                        <Card>
+                        <Card className='card-hover'>
                             <Card.Title><Image src={testImg1} className='img-fluid'/>
                             <h4 className='mt-4'>PAUL LEE</h4></Card.Title>
                             <Card.Body>
@@ -112,7 +112,7 @@ const Home = () => {
                         </Card>
                     </Col>
                     <Col>
-                        <Card>
+                        <Card className='card-hover'>
                             <Card.Title><Image src={testImg2} className='img-fluid'/>
                             <h4 className='mt-4'>ANN CLARK</h4></Card.Title>
                             <Card.Body>

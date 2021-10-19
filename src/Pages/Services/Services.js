@@ -14,7 +14,7 @@ const Services = (props) => {
                     <Card.Text>
                         {desc}
                     </Card.Text>
-                    <Button className='navStyle' as={NavLink} to={`/service/${id}`}activeStyle={{fontWeight:'bold',color:'red'}}>See Details</Button>
+                    <Button className='navStyle' as={NavLink} to={`/service/${id}`}>See Details</Button>
                 </Card.Body>
             </Card>
         </Col>

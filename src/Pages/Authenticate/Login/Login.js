@@ -6,7 +6,7 @@ import useFirebase from '../../../Hook/useFirebase';
 
 const Login = () => {
 
-    const { handleGoogleLogin, handleGithubLogin, handleUserLogin, error } = useFirebase();
+    const { handleGoogleLogin, handleGithubLogin, handleUserLogin, error, setError } = useFirebase();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -21,7 +21,7 @@ const Login = () => {
                 history.push(redirect_uri)
                 // setUser(result.user);
                 console.log(result.user);
-                // setError("");
+                setError("");
             })
     }
     // const [isLogin, setIsLogin] = useState(false);

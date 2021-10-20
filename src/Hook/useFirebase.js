@@ -140,6 +140,7 @@ const useFirebase = () => {
         setName,
         isLoading,
         error,
+        setError,
         name
     };
 };

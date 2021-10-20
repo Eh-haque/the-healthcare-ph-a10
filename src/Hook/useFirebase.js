@@ -1,4 +1,3 @@
-// import FirebaseInit from "../Firebase/Firebase.init";
 import {
     getAuth,
     signInWithPopup,

@@ -19,9 +19,9 @@ const Login = () => {
         handleGithubLogin()
             .then((result) => {
                 history.push(redirect_uri)
-                /* setUser(result.user);
+                // setUser(result.user);
                 console.log(result.user);
-                setError(""); */
+                // setError("");
             })
     }
     // const [isLogin, setIsLogin] = useState(false);

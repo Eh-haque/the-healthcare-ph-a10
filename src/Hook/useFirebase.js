@@ -40,13 +40,14 @@ const useFirebase = () => {
         // .try((error) => setError(error.message));
     };
 
+    // redirect
     const handleGithubLogin = () => {
-        signInWithPopup(auth, githubProvider)
-            .then((result) => {
-                console.log(result.user);
+        return signInWithPopup(auth, githubProvider)
+            /* .then((result) => {
                 setUser(result.user);
+                console.log(result.user);
                 setError("");
-            })
+            }) */
             .catch((error) => setError(error.message));
     };
 

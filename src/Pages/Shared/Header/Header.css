@@ -1,3 +1,6 @@
+.navStyle{
+    transition: all 1s;
+}
 .navStyle:hover{
     background-color: #198754;
     color: white !important;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { Button, Col, Container, Form, Image, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 import useFirebase from '../../../Hook/useFirebase';
 
 const Login = () => {
@@ -10,6 +10,20 @@ const Login = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    // ---------redirect-----------
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/';
+    const githubLogin = () => {
+        handleGithubLogin()
+            .then((result) => {
+                history.push(redirect_uri)
+                /* setUser(result.user);
+                console.log(result.user);
+                setError(""); */
+            })
+    }
     // const [isLogin, setIsLogin] = useState(false);
 
     const handleEmail = e => {
@@ -63,7 +77,7 @@ const Login = () => {
                             <Button variant='primary' onClick={handleGoogleLogin} className="me-2 mb-2">
                                 Google sign in
                             </Button>
-                            <Button variant='success' onClick={handleGithubLogin} className='mb-2'>
+                            <Button variant='success' onClick={githubLogin} className='mb-2'>
                                 Github sign in
                             </Button>
                         </div><hr />

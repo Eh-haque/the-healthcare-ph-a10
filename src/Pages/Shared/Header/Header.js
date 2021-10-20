@@ -25,7 +25,7 @@ const Header = () => {
                         <Nav.Link as={Link} className='rounded navStyle' to="/about" eventKey="link-4"><h5>AboutUs</h5></Nav.Link>
                         <Nav.Link as={Link} className='rounded navStyle' to="/contact" eventKey="link-5"><h5>ContactUs</h5></Nav.Link>
                         {user?.displayName ?
-                            <Button variant='danger' className='text-white ms-2 navStyle rounded' onClick={handleLogout}><h5>Logout {user?.displayName}</h5></Button> :
+                            <Button variant='danger' className='text-white navStyle rounded' onClick={handleLogout}><h5>Logout {user?.displayName}</h5></Button> :
                             <Nav.Link as={Link} className='navStyle rounded navStyle' to="/login" eventKey="link-6"><h5>Login</h5></Nav.Link>
                         }
                     </Nav>

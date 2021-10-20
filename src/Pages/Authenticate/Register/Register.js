@@ -6,7 +6,7 @@ import useFirebase from '../../../Hook/useFirebase';
 
 const Register = () => {
 
-    const { handleGoogleLogin, handleGithubLogin, handleUserRegister, error, setName ,name} = useFirebase();
+    const { handleGoogleLogin, handleGithubLogin, handleUserRegister, error, setName, name } = useFirebase();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

@@ -7,8 +7,10 @@ import banner1 from '../../media/banner/5330589.png'
 import banner2 from '../../media/banner/5330591.png'
 import banner3 from '../../media/banner/5570418.png'
 import Services from '../Services/Services';
-import testImg1 from '../../media/testimonial/speaker2.jpg'; 
-import testImg2 from '../../media/testimonial/speaker10.jpg'; 
+import testImg1 from '../../media/testimonial/speaker2.jpg';
+import testImg2 from '../../media/testimonial/speaker10.jpg';
+import testImg3 from '../../media/testimonial/pexels-photo-4173251.jpeg';
+import testImg4 from '../../media/testimonial/pexels-photo-4173239.jpeg';
 
 const Home = () => {
     const [services, setServices] = useState([]);
@@ -47,10 +49,12 @@ const Home = () => {
 
             {/* services */}
             <Container id='services' className='my-5'>
-                <h2>What services</h2>
-                <h5>Health Care offers?</h5>
-                <p className='border-bottom'>Compellingly embrace empowered e-business after user friendly intellectual capital. Interactively actualize front-end processes with effective convergence.
-                </p>
+                <div className='mb-5 bg-primary p-5 text-white rounded'>
+                    <h2>What services</h2>
+                    <h5 className='border-bottom'>Health Care offers?</h5>
+                    <p>Compellingly embrace empowered e-business after user friendly intellectual capital. Interactively actualize front-end processes with effective convergence.
+                    </p>
+                </div>
                 <Row xs={1} md={2} lg={3} className="g-4 mb-5 my-3">
                     {
                         services.map(service => <Services service={service} key={service.id}></Services>)
@@ -58,10 +62,10 @@ const Home = () => {
                 </Row>
 
                 {/* --------------your doctor------------ */}
-                <div className='mb-5'>
+                <div className='mb-5 bg-primary p-5 text-white rounded'>
                     <h2>Your Doctor</h2>
-                    <h5>Your Treatment</h5>
-                    <p className='border-bottom'>Proactively envisioned multimedia based expertise and cross-media growth strategies. Seamlessly visualize quality intellectual capital collaboration</p>
+                    <h5 className='border-bottom'>Your Treatment</h5>
+                    <p>Proactively envisioned multimedia based expertise and cross-media growth strategies. Seamlessly visualize quality intellectual capital collaboration</p>
                 </div>
                 <Row xs={1} md={2} lg={4} className='' >
 
@@ -96,16 +100,16 @@ const Home = () => {
                 </Row>
 
                 {/*-----------testimonials------------*/}
-                <div className='mb-5'>
+                <div className='mb-5 bg-primary p-5 text-white rounded'>
                     <h2>CLIENT</h2>
-                    <h5>TESTIMONIALS</h5>
-                    <p className='border-bottom'>The best reference is a good word</p>
+                    <h5 className='border-bottom'>TESTIMONIALS</h5>
+                    <p>The best reference is a good word</p>
                 </div>
                 <Row md={2} xs={1}>
                     <Col>
                         <Card className='card-hover'>
-                            <Card.Title><Image src={testImg1} className='img-fluid'/>
-                            <h4 className='mt-4'>PAUL LEE</h4></Card.Title>
+                            <Card.Title><Image src={testImg1} className='img-fluid' />
+                                <h4 className='mt-4'>PAUL LEE</h4></Card.Title>
                             <Card.Body>
                                 <p>Nullam eleifend lectus a tortor interdum, non sodales ante vehicula. Proin consequat, at commodo. Donec eros massa, gravida ac lectus et, pharetra interdum lectus. Sed vel scelerisque quam, id fringilla ante. Vivamus sagittis velit quis dictum ultricies. Quisque posuere rhoncus erat, sit amet aliquet augue.</p>
                             </Card.Body>
@@ -113,10 +117,28 @@ const Home = () => {
                     </Col>
                     <Col>
                         <Card className='card-hover'>
-                            <Card.Title><Image src={testImg2} className='img-fluid'/>
-                            <h4 className='mt-4'>ANN CLARK</h4></Card.Title>
+                            <Card.Title><Image src={testImg2} className='img-fluid' />
+                                <h4 className='mt-4'>ANN CLARK</h4></Card.Title>
                             <Card.Body>
                                 <p>Quisque posuere rhoncus erat, sit amet aliquet augue. Donec eros massa, gravida ac lectus et, pharetra interdum lectus. Sed vel scelerisque quam, id fringilla ante. Vivamus sagittis velit quis dictum ultricies. Nullam eleifend lectus a tortor interdum, non sodales ante vehicula. Proin consequat, at commodo.</p>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    <Col className='mt-5'>
+                        <Card className='card-hover'>
+                            <Card.Title><Image src={testImg4} className='img-fluid' />
+                                <h4 className='mt-4'>LEE PAUL</h4></Card.Title>
+                            <Card.Body>
+                                <p>Vivamus sagittis velit quis dictum ultricies. Quisque posuere rhoncus erat, sit amet aliquet augue. Nullam eleifend lectus a tortor interdum, non sodales ante vehicula. Proin consequat, at commodo. Donec eros massa, gravida ac lectus et, pharetra interdum lectus. Sed vel scelerisque quam, id fringilla ante.</p>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    <Col className='mt-5'>
+                        <Card className='card-hover'>
+                            <Card.Title><Image src={testImg3} className='img-fluid' />
+                                <h4 className='mt-4'>CLARK ANN</h4></Card.Title>
+                            <Card.Body>
+                                <p>Sed vel scelerisque quam, id fringilla ante. Vivamus sagittis velit quis dictum ultricies. Nullam eleifend lectus a tortor interdum, non sodales ante vehicula. Proin consequat, at commodo.Quisque posuere rhoncus erat, sit amet aliquet augue. Donec eros massa, gravida ac lectus et, pharetra interdum lectus.</p>
                             </Card.Body>
                         </Card>
                     </Col>
